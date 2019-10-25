@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace CopyLogs
 {
@@ -6,7 +7,14 @@ namespace CopyLogs
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Copy logs...");
+
+            using var db = new BeeOfficeContext();
+
+
+            var result = db.AppErrors.Take(20).OrderBy(s => s.DateTime).ToList();
+
+
         }
     }
 }
