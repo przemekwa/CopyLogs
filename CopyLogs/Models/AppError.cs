@@ -15,5 +15,8 @@ namespace CopyLogs.Models
 
         [Column("datetime")]
         public DateTime DateTime { get; set; }
+
+        [Column("userName")]
+        public string UserName { get; set; }
     }
 }
